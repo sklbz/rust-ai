@@ -9,13 +9,12 @@ fn main() {
     let architecture = vec![3, 5, 5, 2];
     let mut neural_net = FeedForward::new(&architecture);
 
-    let data = DataSet::from_csv("data/test.csv");
+    let mut data = DataSet::from_csv("data/test.csv");
 
     const ITERATIONS: i64 = 50_000;
-
     neural_net
         .activation(Tanh)
-        .learning_rate(0.01)
+        .learning_rate(0.1)
         .momentum(0.15)
         .train(&data, ITERATIONS);
 

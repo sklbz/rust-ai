@@ -1,3 +1,4 @@
+mod test;
 mod train;
 
 extern crate neuroflow;

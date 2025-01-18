@@ -9,7 +9,7 @@ fn main() {
     let architecture = vec![3, 5, 5, 2];
     let mut neural_net = FeedForward::new(&architecture);
 
-    let mut data = DataSet::from_csv("data/test.csv");
+    let data: DataSet = DataSet::from_csv("data/test.csv").unwrap();
 
     const ITERATIONS: i64 = 50_000;
     neural_net

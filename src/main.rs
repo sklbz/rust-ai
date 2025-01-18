@@ -6,7 +6,7 @@ use neuroflow::io;
 use neuroflow::FeedForward;
 
 fn main() {
-    let architecture = vec![3, 5, 5, 2];
+    let architecture = vec![3, 5, 2];
     let mut neural_net = FeedForward::new(&architecture);
 
     let data: DataSet = DataSet::from_csv("data/test.csv").expect("Unable to load data");

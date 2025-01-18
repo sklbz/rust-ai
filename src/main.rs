@@ -9,7 +9,7 @@ fn main() {
     let architecture = vec![3, 5, 5, 2];
     let mut neural_net = FeedForward::new(&architecture);
 
-    let data: DataSet = DataSet::from_csv("data/test.csv").unwrap();
+    let data: DataSet = DataSet::from_csv("data/test.csv").expect("Unable to load data");
 
     const ITERATIONS: i64 = 50_000;
     neural_net
@@ -18,5 +18,5 @@ fn main() {
         .momentum(0.15)
         .train(&data, ITERATIONS);
 
-    io::save(&mut neural_net, "models/test.flow").unwrap();
+    io::save(&mut neural_net, "models/test.flow").expect("Unable to save model");
 }

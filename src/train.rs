@@ -1,3 +1,5 @@
+use neuroflow::{activators::Type::Tanh, data::DataSet, io, FeedForward};
+
 pub fn train() {
     let architecture = vec![3, 5, 2];
     let mut neural_net = FeedForward::new(&architecture);

@@ -1,5 +1,13 @@
 use neuroflow::{io, FeedForward};
 
-pub fn test() {
-    let mut new_nn: FeedForward = io::load("models/test.flow").unwrap();
+pub fn test() -> bool {
+    let mut neural_net: FeedForward = io::load("models/test.flow").expect("Failed to load model");
+
+    let input = [1.0, 3.0, 5.0];
+
+    let output = neural_net.calc(&input);
+
+    println!("{:?}", output);
+
+    true
 }

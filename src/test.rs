@@ -7,7 +7,7 @@ pub fn test() -> bool {
 
     let output = neural_net.calc(&input);
 
-    println!("{:?}", output);
+    println!("input: {input:#?}\t output: {output:#?}");
 
     true
 }

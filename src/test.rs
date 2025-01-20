@@ -1,5 +1,6 @@
 use neuroflow::{io, FeedForward};
 
+#[allow(dead_code)]
 pub fn test() -> bool {
     let mut neural_net: FeedForward = io::load("models/test.flow").expect("Failed to load model");
 

@@ -1,4 +1,5 @@
 mod chess_ai;
+mod chess_utils;
 mod safetensors;
 mod test;
 mod train;

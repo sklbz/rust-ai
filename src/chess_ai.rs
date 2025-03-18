@@ -2,7 +2,7 @@ use neuroflow::{activators::Type::Tanh, data::DataSet, io, FeedForward};
 
 #[allow(dead_code)]
 pub fn train() {
-    let architecture = vec![3, 5, 2];
+    let architecture = vec![1, 28, 28, 28, 28, 28, 28, 28, 28, 28, 1];
     let mut neural_net = FeedForward::new(&architecture);
 
     let data: DataSet = DataSet::from_csv("data/test.csv").expect("Unable to load data");

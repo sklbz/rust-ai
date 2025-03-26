@@ -3,6 +3,7 @@ mod chess_utils;
 mod safetensors;
 mod test;
 mod train;
+mod mlp;
 
 extern crate neuroflow;
 

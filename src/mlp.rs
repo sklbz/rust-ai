@@ -5,5 +5,7 @@ enum MultiLayerPerceptron {
   // Does adding more layers really makes a model more efficient ? 
   // A layer can be represented as a matrix A
   // But A'A (the succession of the two layers) is also a matrix
-  // Maybe it is just about having enoug weights to parametrize ?
+  // Maybe it is just about having enoug weights to parametrize during training?
+  // I shall probably keep different matrices before training and collapse them after
+  weights: Vec<Matrix>
 }

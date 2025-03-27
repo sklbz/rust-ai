@@ -8,7 +8,7 @@ struct MultiLayerPerceptron {
     // But A'A (the succession of the two layers) is also a matrix
     // Maybe it is just about having enoug weights to parametrize during training?
     // I shall probably keep different matrices before training and collapse them after
-    weights: Vec<Matrix<T, R, S, C>>,
+    weights: Vec<Matrix<f64>>,
 }
 
 impl MultiLayerPerceptron {}

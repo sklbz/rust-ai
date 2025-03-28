@@ -46,9 +46,10 @@ impl MultiLayerPerceptron {
     }
 
     fn calc(&self, input: Vec<f64>) -> Vec<f64> {
+
         let mut result = input;
-        for matrix in self.weights.iter() {
-            result = matrix * result;
+        for (matrix, bias) in self.weights.into_iter()).zip(self.biases.into_iter()) {
+            result = matrix * result + bias;
         }
 
         result

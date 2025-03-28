@@ -32,4 +32,16 @@ impl MultiLayerPerceptron {
             weights,
         }
     }
+
+    fn calc(&self, input: Vec<f64>) -> Vec<f64> {
+        // TODO
+        let mut result = input;
+        for matrix in self.weights.iter() {
+            result = matrix * result;
+        }
+
+        result
+    }
+
+    fn train(&mut self, database: Vec<(f64, f64)>) {}
 }

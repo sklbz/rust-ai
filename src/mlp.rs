@@ -8,7 +8,9 @@ struct MultiLayerPerceptron {
     // But A'A (the succession of the two layers) is also a matrix
     // Maybe it is just about having enoug weights to parametrize during training?
     // I shall probably keep different matrices before training and collapse them after
+    // Maybe the biases cannot be reduced with the weights
     weights: Vec<Matrix<f64, f64, f64, f64>>,
+    biases: Vec<Vec<f64>>,
 }
 
 impl MultiLayerPerceptron {
@@ -21,20 +23,29 @@ impl MultiLayerPerceptron {
 
         // Initialize the weights
         for i in 1..architecture.len() {
+            //  TODO : Set the weights random
             weights.push(Matrix::zeros(
                 architecture[i - 1] as usize,
                 architecture[i] as usize,
             ));
         }
 
+        let biases = Vec::new();
+
+        // Initialize the biases
+        for i in 1..architecture.len() {
+            //  TODO : Set the biases random
+            biases.push(vec![0.0; architecture[i] as usize]);
+        }
+
         Self {
             architecture,
             weights,
+            biases,
         }
     }
 
     fn calc(&self, input: Vec<f64>) -> Vec<f64> {
-        // TODO
         let mut result = input;
         for matrix in self.weights.iter() {
             result = matrix * result;

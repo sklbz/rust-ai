@@ -11,4 +11,25 @@ struct MultiLayerPerceptron {
     weights: Vec<Matrix<f64, f64, f64, f64>>,
 }
 
-impl MultiLayerPerceptron {}
+impl MultiLayerPerceptron {
+    fn new(architecture: Vec<u32>) -> Self {
+        if architecture.len() < 2 {
+            panic!("Architecture must have at least 2 layers");
+        }
+
+        let weights = Vec::new();
+
+        // Initialize the weights
+        for i in 1..architecture.len() {
+            weights.push(Matrix::zeros(
+                architecture[i - 1] as usize,
+                architecture[i] as usize,
+            ));
+        }
+
+        Self {
+            architecture,
+            weights,
+        }
+    }
+}
